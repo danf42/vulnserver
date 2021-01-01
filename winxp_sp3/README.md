@@ -37,7 +37,7 @@ Analysis of the trun crash showed that this was a standard buffer overwrite vuln
  - Add User - Add a user using Winexec and System calls
  - Disable Firewall - Disablable the Windows Firewall using Winexec, System, and Registry API calls.  
  - Enable RDP - Enable RDP using Winexec and System calls
- - Hello World Message Box - Use Windows API to display a message box that says 'Hello World'
+ - Hello World Message Box - Use the Windows API to display a message box that says 'Hello World'
  - Pop Calc - Execute Windows Calc using Winexec and System calls
  - Rebind - Use Borja Merino's [Migrate + Rebind socket](https://github.com/BorjaMerino/Windows-One-Way-Stagers/blob/master/Rebind-Socket/migrate_rebind_socket.asm) to spawn a suspended copy of the application with our bind shell, terminate the current application, sleep to ensure the old sockets are cleaned up, and then execute our cloned copy.  This is to bypass strict firewall rules that only allow the application to communicate externally.  
 
