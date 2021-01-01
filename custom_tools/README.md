@@ -15,6 +15,7 @@ Modified shell script from the PentesterAcademy's [x86 Assembly Language and She
 
 ## encoder
 Alphanumeric Sub-Encoder developed from Metasploit's opt_sub.rb encoder and Corelan's Mona encoder.
+
 `sub_encoder.py` attempts to encode a payload using SUB instructions.  This version does not attempt to optimize the command set and does not calculate the decode location.
 
 ![sub_encoder.py help](images/sub_encoder_help.png)
