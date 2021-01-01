@@ -1,0 +1,6 @@
+s_readline();
+s_string("LTIME");
+s_string(" ");
+s_string_variable("COMMAND");
+printf("\n");
+//sleep(1);

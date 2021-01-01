@@ -1,0 +1,11 @@
+
+# Directories to Ignore
+resources/
+.venv/
+archive/
+
+# Files to ignore
+*.txt
+*.out
+*.dis
+*.exe
