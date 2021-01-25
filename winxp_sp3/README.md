@@ -28,8 +28,8 @@ Analysis of the kset crash showed that this is another limited buffer to overwri
 
 ## LTER
 Analysis of the lter crash showed only alphanumeric characters are allowed.  The following proof of concepts were developed to exploit the lter command:
- - Egghunter - Use the [sub encoder](../../custom_tools/encoder) to encode the egghunter shellcode.  We can use `msfvenom` to encode our reverse shell and will need to use the `BufferRegister` option to specifiy where are shellcode is located.  This is because the first few bytes of the encoded reverse shell is not alphanumeric safe.   
- - Using a `jmp esp` - Found that if you send a small enough payload, you will not trigger the SEH.  We can use the [safe address checker](../../custom_tools/safe_address_checker) to find a `jmp esp` instruction that only contains alphanumeric characters.  We can use `msfvenom` to encode our reverse shell and will need to use the `BufferRegister` option to specifiy where are shellcode is located.
+ - Egghunter - Use the [sub encoder](https://github.com/danf42/vulnserver/tree/master/custom_tools/encoder) to encode the egghunter shellcode.  We can use `msfvenom` to encode our reverse shell and will need to use the `BufferRegister` option to specifiy where are shellcode is located.  This is because the first few bytes of the encoded reverse shell is not alphanumeric safe.   
+ - Using a `jmp esp` - Found that if you send a small enough payload, you will not trigger the SEH.  We can use the [safe address checker](https://github.com/danf42/vulnserver/tree/master/custom_tools/safe_address_checker) to find a `jmp esp` instruction that only contains alphanumeric characters.  We can use `msfvenom` to encode our reverse shell and will need to use the `BufferRegister` option to specifiy where are shellcode is located.
 
 ## TRUN
 Analysis of the trun crash showed that this was a standard buffer overwrite vulnerability.  We used this command to experiment with writing Windows API shellcode and with trying to bypass strict firewall rules.  
@@ -37,7 +37,7 @@ Analysis of the trun crash showed that this was a standard buffer overwrite vuln
  - Add User - Add a user using Winexec and System calls
  - Disable Firewall - Disablable the Windows Firewall using Winexec, System, and Registry API calls.  
  - Enable RDP - Enable RDP using Winexec and System calls
- - Hello World Message Box - Use Windows API to display a message box that says 'Hello World'
+ - Hello World Message Box - Use the Windows API to display a message box that says 'Hello World'
  - Pop Calc - Execute Windows Calc using Winexec and System calls
  - Rebind - Use Borja Merino's [Migrate + Rebind socket](https://github.com/BorjaMerino/Windows-One-Way-Stagers/blob/master/Rebind-Socket/migrate_rebind_socket.asm) to spawn a suspended copy of the application with our bind shell, terminate the current application, sleep to ensure the old sockets are cleaned up, and then execute our cloned copy.  This is to bypass strict firewall rules that only allow the application to communicate externally.  
 
