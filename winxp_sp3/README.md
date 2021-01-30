@@ -34,12 +34,14 @@ Analysis of the lter crash showed only alphanumeric characters are allowed.  The
 ## TRUN
 Analysis of the trun crash showed that this was a standard buffer overwrite vulnerability.  We used this command to experiment with writing Windows API shellcode and with trying to bypass strict firewall rules.  
  - Standard buffer overwrite - Find a `jmp esp` instruction to jump to our reverse shell
- - Add User - Add a user using Winexec and System calls
+ - Add User - Add user via System, WinExec, and Windows API
  - Disable Firewall - Disablable the Windows Firewall using Winexec, System, and Registry API calls.  
  - Enable RDP - Enable RDP using Winexec and System calls
  - Hello World Message Box - Use the Windows API to display a message box that says 'Hello World'
- - Pop Calc - Execute Windows Calc using Winexec and System calls
- - Rebind - Use Borja Merino's [Migrate + Rebind socket](https://github.com/BorjaMerino/Windows-One-Way-Stagers/blob/master/Rebind-Socket/migrate_rebind_socket.asm) to spawn a suspended copy of the application with our bind shell, terminate the current application, sleep to ensure the old sockets are cleaned up, and then execute our cloned copy.  This is to bypass strict firewall rules that only allow the application to communicate externally.  
+ - Pop Calc - Execute Windows Calc using Winexec and System calls 
+ - Custom Shells - custom bind and reverse shell using Windows API
+ - Rebind - Use Borja Merino's [Migrate + Rebind socket](https://github.com/BorjaMerino/Windows-One-Way-Stagers/blob/master/Rebind-Socket/migrate_rebind_socket.asm) to spawn a suspended copy of the application with our bind shell, terminate the 
+ current application, sleep to ensure the old sockets are cleaned up, and then execute our cloned copy.  This is to bypass strict firewall rules that only allow the application to communicate externally.  
 
     We modified Metasploit's Windows bind_tcp shellcode to sleep for 30 seconds.  
  ```
