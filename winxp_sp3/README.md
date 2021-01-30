@@ -36,7 +36,7 @@ Analysis of the trun crash showed that this was a standard buffer overwrite vuln
  - Standard buffer overwrite - Find a `jmp esp` instruction to jump to our reverse shell
  - Add User - Add user via System, WinExec, and Windows API
  - Disable Firewall - Disablable the Windows Firewall using Winexec, System, and Registry API calls.  
- - Enable RDP - Enable RDP using Winexec and System calls
+ - Enable RDP - Enable RDP using Winexec, System, and Windows API
  - Hello World Message Box - Use the Windows API to display a message box that says 'Hello World'
  - Pop Calc - Execute Windows Calc using Winexec and System calls 
  - Custom Shells - custom bind and reverse shell using Windows API
