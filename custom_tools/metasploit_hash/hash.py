@@ -81,8 +81,8 @@ def hash(module, function, bits=13, print_hash=True):
         module_hash += ord(c)
 	
     token = ''
-    if isinstance(function, bytes):
-        token = function + b'\x00'
+    if isinstance(function, bytes):    
+        token = function.decode() + '\x00' 
     else:
         token = function + '\x00'
 		
