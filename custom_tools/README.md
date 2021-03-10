@@ -40,6 +40,7 @@ Python script to check one or more addresses against a set of good characters.  
 ![safe_address_checker.py help](images/safe_address_checker_help.png)
 
 ## str_to_hex
+### str_to_hex.py
 Python script that will convert a string to 4 byte PUSH instructions.  For example, if you had a file that contained the string 'Hello World' the output would be
 ```
 ; 'Hello World '
@@ -50,3 +51,9 @@ push 0x6c6c6548
 ```
 
 Usage: `str_to_hex.py <input file.  One command per line>`
+
+### str_to_unicode_hex.py
+Similar to str_to_hex.py, but will convert the string into into unicode hex bytes.  
+
+### ip_to_hex.py
+Convert an IP address into hex.
